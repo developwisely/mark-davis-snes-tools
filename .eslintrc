@@ -1,0 +1,158 @@
+{
+    "extends": [
+      "airbnb-typescript",
+      "airbnb/hooks",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:jest/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "html",
+      "react",
+      "@typescript-eslint",
+      "jest",
+      "import"
+    ],
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true
+    },
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/comma-dangle": [
+        "error",
+        "only-multiline"
+      ],
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "camelcase": "off",
+      "consistent-return": 0,
+      "func-names": 0,
+      "import": 0,
+      "import/extensions": 0,
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.test.js",
+            "**/*.test.jsx",
+            "**/*.test.ts",
+            "**/*.test.tsx"
+          ]
+        }
+      ],
+      "import/prefer-default-export": 0,
+      "linebreak-style": "off",
+      "max-len": 0,
+      "no-await-in-loop": 0,
+      "no-console": 0,
+      "no-nested-ternary": 0,
+      "no-param-reassign": [
+        2,
+        {
+          "props": false
+        }
+      ],
+      "no-return-assign": [
+        "error",
+        "except-parens"
+      ],
+      "no-restricted-syntax": [
+        2,
+        "ForInStatement",
+        "LabeledStatement",
+        "WithStatement"
+      ],
+      "no-underscore-dangle": 0,
+      "no-unused-expressions": [
+        2,
+        {
+          "allowTaggedTemplates": true
+        }
+      ],
+      "no-unused-vars": [
+        1,
+        {
+          "argsIgnorePattern": "res|next|^err",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "prefer-const": [
+        "error",
+        {
+          "destructuring": "all"
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "lf",
+          "printWidth": 75,
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5"
+        }
+      ],
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ],
+      "react/display-name": 1,
+      "react/forbid-prop-types": 0,
+      "react/function-component-definition": [
+        2,
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx",
+            ".mdx"
+          ]
+        }
+      ],
+      "react/jsx-props-no-spreading": "off",
+      "react/no-array-index-key": 0,
+      "react/no-unescaped-entities": 0,
+      "react/prefer-stateless-function": 0,
+      "react/react-in-jsx-scope": 0,
+      "react/require-default-props": 0,
+      "space-before-function-paren": 0
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
