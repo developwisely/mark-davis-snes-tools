@@ -2,14 +2,11 @@ import { FC, useMemo, useState } from 'react';
 import {
   Box,
   Center,
-  Divider,
   Flex,
   FormControl,
   FormLabel,
   Heading,
   Icon,
-  List,
-  ListItem,
   Select,
   Spacer,
   Spinner,
@@ -172,7 +169,7 @@ export const Home: FC = () => {
                     if (!filteredLure.lures.length) return;
 
                     return (
-                      <Table size="sm" mb={4}>
+                      <Table size="sm" mb={4} key={i}>
                         <Thead>
                           <Tr
                             background="rgba(0,0,0,0.25)"
