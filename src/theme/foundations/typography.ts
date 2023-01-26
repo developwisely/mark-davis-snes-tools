@@ -1,6 +1,6 @@
 const fontList = [
   '"Google Font"',
-  '"Open Sans"',
+  '"Roboto Condensed"',
   '"Helvetica Neue"',
   'Helvetica',
   'Arial',

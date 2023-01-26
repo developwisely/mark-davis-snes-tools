@@ -33,6 +33,7 @@ import {
 
 import { LureCategory } from '../../types';
 import { percent2color } from '../../helpers';
+import { LureDataTable } from '../../components';
 
 export const Home: FC = () => {
   const [userSeason, setUserSeason] = useState(0);
@@ -93,8 +94,14 @@ export const Home: FC = () => {
   };
 
   return (
-    <Stack direction={['column', 'column', 'row']} spacing={12}>
-      <VStack spacing={4} align="left" minW="150px">
+    <Stack direction="column" spacing={3}>
+      {filteredLures &&
+        filteredLures.map((filteredLure, i) => {
+          if (!filteredLure.lures.length) return;
+          return <LureDataTable categoryData={filteredLure} />;
+        })}
+
+      {/* <VStack spacing={4} align="left" minW="150px">
         <Heading as="h3" size="md">
           Filters
         </Heading>
@@ -179,16 +186,16 @@ export const Home: FC = () => {
                             {userSeason > 0 ? (
                               <Th isNumeric minW="50%">
                                 <Flex>
-                                  <Spacer />
+                                  {/* <Spacer />
                                   <Icon
                                     as={seasonsData[userSeason]?.icon}
                                     sx={{ opacity: 0.5 }}
                                     mr={1}
                                     boxSize={4}
                                   />
-                                  <Text>
+                                  {/* <Text>
                                     {seasonsData[userSeason]?.name}
-                                  </Text>
+                                  </Text> 
                                 </Flex>
                               </Th>
                             ) : (
@@ -198,16 +205,16 @@ export const Home: FC = () => {
                                   return (
                                     <Th isNumeric key={k}>
                                       <Flex>
-                                        <Spacer />
+                                        {/* <Spacer /> 
                                         <Icon
                                           as={season.icon}
                                           sx={{ opacity: 0.5 }}
                                           mr={1}
                                           boxSize={4}
                                         />
-                                        <Text>
+                                        {/* <Text>
                                           {season.name.substring(0, 1)}
-                                        </Text>
+                                        </Text> 
                                       </Flex>
                                     </Th>
                                   );
@@ -238,75 +245,10 @@ export const Home: FC = () => {
                     );
                   })}
               </>
-
-              {/* <Table size="sm">
-                <Thead>
-                  <Tr>
-                    <Th>Category</Th>
-                    <Th>Lure</Th>
-                    {userSeason > 0 && (
-                      <Th isNumeric minW="50%">
-                        <Flex>
-                          <Spacer />
-                          <Icon
-                            as={seasonsData[userSeason]?.icon}
-                            sx={{ opacity: 0.5 }}
-                            mr={1}
-                            boxSize={4}
-                          />
-                          <Text>{seasonsData[userSeason]?.name}</Text>
-                        </Flex>
-                      </Th>
-                    )}
-
-                    {userSeason === 0 &&
-                      seasonsData.map((season, i) => {
-                        if (i < 1) return;
-
-                        return (
-                          <Th isNumeric key={i}>
-                            <Flex>
-                              <Spacer />
-                              <Icon
-                                as={season.icon}
-                                sx={{ opacity: 0.5 }}
-                                mr={1}
-                                boxSize={4}
-                              />
-                              <Text>{season.name.substring(0, 1)}</Text>
-                            </Flex>
-                          </Th>
-                        );
-                      })}
-                  </Tr>
-                </Thead>
-
-                <Tbody>
-                  {filteredLures &&
-                    filteredLures.map((filteredLure) =>
-                      filteredLure.lures.map((lure, i) => (
-                        <Tr key={i}>
-                          <Td>{filteredLure.name}</Td>
-                          <Td>{lure.name}</Td>
-                          {lure.values.map((val, j) => (
-                            <Td
-                              isNumeric
-                              key={j}
-                              fontWeight="bold"
-                              color={getValueCellColor(Number(val))}
-                            >
-                              {val}
-                            </Td>
-                          ))}
-                        </Tr>
-                      ))
-                    )}
-                </Tbody>
-              </Table> */}
             </TableContainer>
           </>
         )}
-      </Box>
+      </Box> */}
     </Stack>
   );
 };

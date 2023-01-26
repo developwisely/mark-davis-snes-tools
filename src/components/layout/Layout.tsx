@@ -19,12 +19,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => (
         <ThemeSwitcher />
       </HStack>
     </Box>
-    <Container
-      px={4}
-      py={6}
-      minW={['full', 'full', '980px']}
-      maxW={['full', 'full', '1080px']}
-    >
+    <Container px={4} py={6} maxW={['full', 'container.sm']}>
       {children}
     </Container>
     <Box>Footer</Box>

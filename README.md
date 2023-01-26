@@ -1,14 +1,14 @@
 # Mark Davis' The Fishing Master SNES Tools
 
-#### Lure Filtering
+### Lure Filtering
 
 This page allows filtering of lures based on lure rating, bait rating, and/or season.
 
-#### Guides
+### Guides
 
 A list of guides for the categories to speedrun the game.
 
-#### Fishing Spot Filtering (coming soon)
+### Fishing Spot Filtering (coming soon)
 
 This page will allow filtering fishing spots based on lure ratings, bait ratings, and seasons.
 
